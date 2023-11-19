@@ -1,4 +1,5 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
+{% load static %}
 
 {% load i18n %}
 {% load account socialaccount %}
@@ -7,19 +8,74 @@
 
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<!-- Home -->
 
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<div class="home">
+	<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/contact.jpg' %}"
+		data-speed="0.8"></div>
+	<div class="home_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="home_content text-center">
+						<div class="home_subtitle page_subtitle">The Venue</div>
+						<div class="home_title">
+							<h1>Log In</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
+<!-- Log In -->
+
+<div id="contact" class="sig">
+  <div class="sig_content_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="sig_content">
+            
+            <div class="sig_title">
+              <h1>Hi There!</h1>
+            </div>
+            
+            <div class="sig_name_container d-flex flex-row align-items-start justify-content-start mb-5">
+              <div class="sig_name"><p>{% blocktrans %}If you have not created an account yet, then please
+                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p></div>              
+            </div>
+            <div class="sig_content_list">
+              <div class="d-flex flex-row align-items-center justify-content-start">
+                <form class="login" method="POST" action="{% url 'account_login' %}">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  {% if redirect_field_value %}
+                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                  {% endif %}
+                  <button class="primaryAction button sig_button trans_200" type="submit"><a href="#">{% trans "Sign In" %}</a></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sig_image_container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 offset-lg-5">
+          <div class="sig_image">
+            <div class="background_image" style="background-image:url(static/images/sig.jpg)"></div>
+            <img src="static/images/sig.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
