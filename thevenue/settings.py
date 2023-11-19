@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['the--venue-5dcdc2b376c4.herokuapp.com', '8000-tanjava-thevenue-hjxiidsckof.ws-eu106.gitpod.io']
 
