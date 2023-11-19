@@ -1,21 +1,75 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
+{% load static %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+<!-- Home -->
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
+<div class="home">
+  <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/blog.jpg' %}"
+    data-speed="0.8"></div>
+  <div class="home_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="home_content text-center">
+            <div class="home_subtitle page_subtitle">The Venue</div>
+            <div class="home_title">
+              <h1>Sign Out</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog -->
+
+		<!-- Signature Dish -->
+
+		<div id="contact" class="sig">
+			<div class="sig_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="sig_content">								
+								<div class="sig_title">
+									<h1>{% trans "Good Bye" %}</h1>
+								</div>
+								<div class="sig_name_container d-flex flex-row align-items-start justify-content-start">
+									<div class="sig_name">{% trans 'Are you sure you want to sign out?' %}</div>
+								</div>
+								<div> 
+                  <form method="post" action="{% url 'account_logout' %}">
+                  {% csrf_token %}
+                  {% if redirect_field_value %}
+                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                  {% endif %}
+                  <button class="button sig_button trans_200" type="submit">{% trans 'Sign Out' %}</button>
+                </form></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sig_image_container">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7 offset-lg-5">
+							<div class="sig_image">
+								<div class="background_image" style="background-image:url(https://images.pexels.com/photos/7474117/pexels-photo-7474117.jpeg?auto=compress&cs=tinysrgb&w=1600)"></div>
+								<img src="static/images/sig.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-{% endblock %}
+  {% endblock %}
