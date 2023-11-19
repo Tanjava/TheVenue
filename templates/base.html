@@ -21,6 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/menu.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/contact.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/contact-responsive.css' %}">
 </head>
 
 <body>
@@ -45,7 +47,7 @@
 									<li><a href="{% url 'index' %}#reservations">book</a></li>
 									<li><a href="{% url 'index' %}#contact">contact</a></li>
 									{% if user.is_authenticated %}
-									<li><a href="{% url 'index' %}#mybookings">My Reservations</a></li>
+									<li><a href="{% url 'myreservations' %}">My Reservations</a></li>
 									{% endif %}
 								</ul>
 							</nav>

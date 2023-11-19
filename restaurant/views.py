@@ -6,3 +6,6 @@ def index(request):
 
 def reservations(request):
     return render(request, 'reservations.html')
+
+def myreservations(request):
+    return render(request, 'myreservations.html')
