@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['the--venue-5dcdc2b376c4.herokuapp.com', '8000-tanjava-thevenue-hjxiidsckof.ws-eu106.gitpod.io']
+ALLOWED_HOSTS = ['the--venue-5dcdc2b376c4.herokuapp.com', '8000-tanjava-thevenue-y4fanhguedi.ws-eu108.gitpod.io']
 
 
 # Application definition
@@ -66,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'thevenue.urls'
